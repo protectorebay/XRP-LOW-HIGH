@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>XRP/USDT 24H High Low Monitor</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="panel" aria-live="polite">
+    <div class="title-row">
+      <div>
+        <div class="symbol">XRP / USDT</div>
+        <div class="exchange">BINANCE</div>
+      </div>
+      <div id="status" class="status disconnected"><span class="dot"></span><span>CONNECTING</span></div>
+    </div>
+
+    <section class="price-block">
+      <div class="label">CURRENT PRICE</div>
+      <div id="price" class="price">--</div>
+    </section>
+
+    <section class="levels">
+      <div class="level high">
+        <div class="label">24H HIGH</div>
+        <div id="high" class="level-value">--</div>
+      </div>
+      <div class="level low">
+        <div class="label">24H LOW</div>
+        <div id="low" class="level-value">--</div>
+      </div>
+    </section>
+
+    <section class="info-grid">
+      <div class="info-card">
+        <div class="label">LAST HIT</div>
+        <div id="last-hit" class="info-value">NONE</div>
+      </div>
+      <div class="info-card">
+        <div class="label">COOLDOWN</div>
+        <div id="cooldown" class="info-value">READY</div>
+      </div>
+      <div class="info-card">
+        <div class="label">LAST UPDATE</div>
+        <div id="last-update" class="info-value">--</div>
+      </div>
+      <div class="info-card">
+        <div class="label">STREAM</div>
+        <div id="stream-state" class="info-value">--</div>
+      </div>
+    </section>
+  </main>
+
+  <audio id="high-sound" preload="auto" src="sounds/high.mp3"></audio>
+  <audio id="low-sound" preload="auto" src="sounds/low.mp3"></audio>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -2,7 +2,7 @@
 
 html, body { margin: 0; min-height: 100%; background: #000; font-family: Arial, Helvetica, sans-serif; color: #f5f7fa; }
 body { padding: 24px; }
-.panel { width: min(620px, 100%); padding: 22px 24px; border-radius: 16px; background: rgba(10, 13, 18, 0.94); border: none; box-shadow: none; }
+.panel { width: min(620px, 100%); padding: 22px 24px; border-radius: 16px; background: #000; border: none; box-shadow: none; }
 .title-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; }
 .symbol { font-size: 25px; font-weight: 700; letter-spacing: 0.5px; }
 .exchange { margin-top: 4px; color: #8d98a7; font-size: 12px; font-weight: 700; letter-spacing: 1.8px; }

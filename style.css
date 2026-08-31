@@ -3,14 +3,12 @@
 html, body {
   margin: 0;
   min-height: 100%;
-  background: rgba(0, 0, 0, 0.55);
+  background: #000;
   font-family: Arial, Helvetica, sans-serif;
   color: #f5f7fa;
 }
 
-body {
-  padding: 24px;
-}
+body { padding: 24px; }
 
 .panel {
   width: min(620px, 100%);

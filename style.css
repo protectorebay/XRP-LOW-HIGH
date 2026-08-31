@@ -3,7 +3,7 @@
 html, body {
   margin: 0;
   min-height: 100%;
-  background: transparent;
+  background: rgba(0, 0, 0, 0.55);
   font-family: Arial, Helvetica, sans-serif;
   color: #f5f7fa;
 }
@@ -21,107 +21,27 @@ body {
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.30);
 }
 
-.title-row {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 20px;
-}
-
-.symbol {
-  font-size: 25px;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-}
-
-.exchange {
-  margin-top: 4px;
-  color: #8d98a7;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 1.8px;
-}
-
-.status {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.8px;
-  white-space: nowrap;
-}
-
-.dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #8d98a7;
-}
-
+.title-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; }
+.symbol { font-size: 25px; font-weight: 700; letter-spacing: 0.5px; }
+.exchange { margin-top: 4px; color: #8d98a7; font-size: 12px; font-weight: 700; letter-spacing: 1.8px; }
+.status { display: flex; align-items: center; gap: 7px; font-size: 11px; font-weight: 700; letter-spacing: 0.8px; white-space: nowrap; }
+.dot { width: 8px; height: 8px; border-radius: 50%; background: #8d98a7; }
 .status.connected .dot { background: #43d17a; }
 .status.reconnecting .dot { background: #e4b74a; }
 .status.error .dot { background: #e05a5a; }
-
-.price-block {
-  margin-top: 24px;
-  text-align: center;
-}
-
-.label {
-  color: #8d98a7;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 1.4px;
-}
-
-.price {
-  margin-top: 4px;
-  font-size: 48px;
-  line-height: 1.05;
-  font-weight: 700;
-  font-variant-numeric: tabular-nums;
-}
-
-.levels {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  margin-top: 22px;
-}
-
-.level, .info-card {
-  padding: 14px 16px;
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.045);
-}
-
-.level-value {
-  margin-top: 4px;
-  font-size: 22px;
-  font-weight: 700;
-  font-variant-numeric: tabular-nums;
-}
-
+.price-block { margin-top: 24px; text-align: center; }
+.label { color: #8d98a7; font-size: 10px; font-weight: 700; letter-spacing: 1.4px; }
+.price { margin-top: 4px; font-size: 48px; line-height: 1.05; font-weight: 700; font-variant-numeric: tabular-nums; }
+.levels { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 22px; }
+.level, .info-card { padding: 14px 16px; border-radius: 10px; background: rgba(255, 255, 255, 0.045); }
+.level-value { margin-top: 4px; font-size: 22px; font-weight: 700; font-variant-numeric: tabular-nums; }
 .high .level-value { color: #ef6b6b; }
 .low .level-value { color: #62a8ff; }
-
-.info-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  margin-top: 12px;
-}
-
-.info-value {
-  margin-top: 5px;
-  font-size: 14px;
-  font-weight: 700;
-  font-variant-numeric: tabular-nums;
-}
-
-@media (max-width: 520px) {
-  body { padding: 12px; }
-  .panel { padding: 18px; }
-  .price { font-size: 38px; }
-}
+.info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 12px; }
+.info-value { margin-top: 5px; font-size: 14px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.hit-banner { display: none; margin-top: 14px; padding: 14px 16px; border-radius: 10px; text-align: center; font-size: 22px; font-weight: 800; letter-spacing: 0.7px; text-transform: uppercase; font-variant-numeric: tabular-nums; }
+.hit-banner.visible { display: block; animation: hitPulse 0.8s ease-in-out infinite alternate; }
+.hit-banner.high-hit { background: rgba(239, 107, 107, 0.18); border: 1px solid rgba(239, 107, 107, 0.55); color: #ff7777; }
+.hit-banner.low-hit { background: rgba(98, 168, 255, 0.18); border: 1px solid rgba(98, 168, 255, 0.55); color: #69afff; }
+@keyframes hitPulse { from { opacity: 0.35; transform: scale(0.985); } to { opacity: 1; transform: scale(1); } }
+@media (max-width: 520px) { body { padding: 12px; } .panel { padding: 18px; } .price { font-size: 38px; } .hit-banner { font-size: 18px; } }

@@ -5,55 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>XRP/USDT 24H High Low Monitor</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    .hit-banner { display:none; margin-top:14px; padding:14px 16px; border-radius:10px; text-align:center; font-size:22px; font-weight:800; letter-spacing:.7px; text-transform:uppercase; }
+    .hit-banner.visible { display:block; animation:hitPulse .8s ease-in-out infinite alternate; }
+    .hit-banner.high-hit { background:rgba(239,107,107,.18); border:1px solid rgba(239,107,107,.55); color:#ff7777; }
+    .hit-banner.low-hit { background:rgba(98,168,255,.18); border:1px solid rgba(98,168,255,.55); color:#69afff; }
+    @keyframes hitPulse { from { opacity:.35; transform:scale(.985); } to { opacity:1; transform:scale(1); } }
+  </style>
 </head>
 <body>
   <main class="panel" aria-live="polite">
     <div class="title-row">
-      <div>
-        <div class="symbol">XRP / USDT</div>
-        <div class="exchange">BINANCE</div>
-      </div>
+      <div><div class="symbol">XRP / USDT</div><div class="exchange">BINANCE</div></div>
       <div id="status" class="status disconnected"><span class="dot"></span><span>CONNECTING</span></div>
     </div>
-
-    <section class="price-block">
-      <div class="label">CURRENT PRICE</div>
-      <div id="price" class="price">--</div>
-    </section>
-
+    <section class="price-block"><div class="label">CURRENT PRICE</div><div id="price" class="price">--</div></section>
     <section class="levels">
-      <div class="level high">
-        <div class="label">24H HIGH</div>
-        <div id="high" class="level-value">--</div>
-      </div>
-      <div class="level low">
-        <div class="label">24H LOW</div>
-        <div id="low" class="level-value">--</div>
-      </div>
+      <div class="level high"><div class="label">24H HIGH</div><div id="high" class="level-value">--</div></div>
+      <div class="level low"><div class="label">24H LOW</div><div id="low" class="level-value">--</div></div>
     </section>
-
     <section class="info-grid">
-      <div class="info-card">
-        <div class="label">LAST HIT</div>
-        <div id="last-hit" class="info-value">NONE</div>
-      </div>
-      <div class="info-card">
-        <div class="label">COOLDOWN</div>
-        <div id="cooldown" class="info-value">READY</div>
-      </div>
-      <div class="info-card">
-        <div class="label">LAST UPDATE</div>
-        <div id="last-update" class="info-value">--</div>
-      </div>
-      <div class="info-card">
-        <div class="label">STREAM</div>
-        <div id="stream-state" class="info-value">--</div>
-      </div>
+      <div class="info-card"><div class="label">LAST HIT</div><div id="last-hit" class="info-value">NONE</div></div>
+      <div class="info-card"><div class="label">COOLDOWN</div><div id="cooldown" class="info-value">READY</div></div>
+      <div class="info-card"><div class="label">LAST UPDATE</div><div id="last-update" class="info-value">--</div></div>
+      <div class="info-card"><div class="label">STREAM</div><div id="stream-state" class="info-value">--</div></div>
     </section>
-
     <div id="hit-banner" class="hit-banner" aria-hidden="true"></div>
   </main>
-
   <audio id="high-sound" preload="auto" src="high.mp3"></audio>
   <audio id="low-sound" preload="auto" src="low.mp3"></audio>
   <script src="app.js"></script>
